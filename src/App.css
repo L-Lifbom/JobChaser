@@ -1,5 +1,15 @@
 :root {
-
+  --clr-background-1: #1c1c1eae;
+  --clr-background-2: #0f0f10;
+  --clr-background-3: #1c1c1e;
+  --clr-background-4: #97979b;
+  --text-light-1: #FFFFF0;
+  --text-light-2: #FFFFFF;
+  --text-dark: #1c1c1e;
+  --radius-1: 2rem;
+  --radius-2: 0.6rem;
+  --spacing: 0.15rem;
+  --ff-primary: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 *, ::before, ::after {
@@ -10,9 +20,10 @@
 
 body {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--clr-background-3);
 }
 
 button {
@@ -23,11 +34,40 @@ input {
   font-family: inherit;
 }
 
-nav {
-  grid-area: nav;
-  display: flex;
-  justify-content: center;
-  width: 60%;
+.nav-bar {
+  width: 800px;
+  height: 80px;
+  margin-top: 100px;
+  background-color: var(--clr-background-2);
+}
+
+main {
+  margin-top: 100px;
+  overflow-y: scroll;
+  height: 540px;
+}
+
+table {
+  width: 994px;
+  color: var(--text-light-1);
+  column-gap: 10px;
+}
+
+th {
+  text-align: center;
+  width: 142px;
   height: 75px;
-  background-color: green;
+  background-color: black;
+}
+
+td {
+  text-align: center;
+  height: 75px;
+  max-width: 142px;
+  background-color: var(--clr-background-2);
+}
+
+td img {
+  width: 40%;
+  filter: invert(1);
 }
