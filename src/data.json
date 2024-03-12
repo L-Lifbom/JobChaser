@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "logo": "./src/assets/logo-1.png",
+    "company": "Apple",
+    "position": "Junior Frontend Developer",
+    "role": "Frontend",
+    "level": "Junior",
+    "location": "USA/Remote",
+    "contract": "Fulltime"
+  },
+  {
+    "id": 2,
+    "logo": "./src/assets/logo-2.png",
+    "company": "Google",
+    "position": "Senior Frontend Developer",
+    "role": "Frontend",
+    "level": "Senior",
+    "location": "USA/Remote",
+    "contract": "Fulltime"
+  },
+  {
+    "id": 3,
+    "logo": "./src/assets/logo-3.png",
+    "company": "Microsoft",
+    "position": "Full Stack Developer",
+    "role": "Full Stack",
+    "level": "Mid-level",
+    "location": "USA/Remote",
+    "contract": "Fulltime"
+  },
+  {
+    "id": 4,
+    "logo": "./src/assets/logo-4.png",
+    "company": "Amazon",
+    "position": "Backend Developer",
+    "role": "Backend",
+    "level": "Junior",
+    "location": "USA",
+    "contract": "Fulltime"
+  },
+  {
+    "id": 5,
+    "logo": "./src/assets/logo-5.png",
+    "company": "Netflix",
+    "position": "UI/UX Designer",
+    "role": "Design",
+    "level": "Mid-level",
+    "location": "Remote",
+    "contract": "Contract"
+  },
+  {
+    "id": 6,
+    "logo": "./src/assets/logo-6.png",
+    "company": "Spotify",
+    "position": "Product Manager",
+    "role": "Management",
+    "level": "Senior",
+    "location": "Europe/Remote",
+    "contract": "Fulltime"
+  },
+  {
+    "id": 7,
+    "logo": "./src/assets/logo-7.png",
+    "company": "Tesla",
+    "position": "Data Scientist",
+    "role": "Data",
+    "level": "Mid-level",
+    "location": "USA",
+    "contract": "Fulltime"
+  },
+  {
+    "id": 8,
+    "logo": "./src/assets/logo-8.png",
+    "company": "Facebook",
+    "position": "Cybersecurity Analyst",
+    "role": "Security",
+    "level": "Mid-level",
+    "location": "Remote",
+    "contract": "Contract"
+  },
+  {
+    "id": 9,
+    "logo": "./src/assets/logo-9.png",
+    "company": "Twitter",
+    "position": "Social Media Strategist",
+    "role": "Marketing",
+    "level": "Junior",
+    "location": "USA/Remote",
+    "contract": "Part-time"
+  },
+  {
+    "id": 10,
+    "logo": "./src/assets/logo-10.png",
+    "company": "Adobe",
+    "position": "Creative Director",
+    "role": "Design",
+    "level": "Senior",
+    "location": "USA",
+    "contract": "Fulltime"
+  },
+  {
+    "id": 11,
+    "logo": "./src/assets/logo-11.png",
+    "company": "LinkedIn",
+    "position": "Content Writer",
+    "role": "Content",
+    "level": "Junior",
+    "location": "Remote",
+    "contract": "Freelance"
+  },
+  {
+    "id": 12,
+    "logo": "./src/assets/logo-12.png",
+    "company": "Airbnb",
+    "position": "Mobile Developer",
+    "role": "Mobile",
+    "level": "Mid-level",
+    "location": "Remote",
+    "contract": "Fulltime"
+  },
+  {
+    "id": 13,
+    "logo": "./src/assets/logo-13.png",
+    "company": "Slack",
+    "position": "DevOps Engineer",
+    "role": "DevOps",
+    "level": "Senior",
+    "location": "USA/Remote",
+    "contract": "Fulltime"
+  },
+  {
+    "id": 14,
+    "logo": "./src/assets/logo-14.png",
+    "company": "Snapchat",
+    "position": "AR/VR Developer",
+    "role": "Development",
+    "level": "Mid-level",
+    "location": "USA/Remote",
+    "contract": "Fulltime"
+  },
+  {
+    "id": 15,
+    "logo": "./src/assets/logo-15.png",
+    "company": "TikTok",
+    "position": "Video Content Strategist",
+    "role": "Content",
+    "level": "Junior",
+    "location": "Remote",
+    "contract": "Part-time"
+  }
+]
