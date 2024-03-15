@@ -1,13 +1,20 @@
-import './style/App.css'
-/* import Footer from './components/footer' */
+import './style/index.css'
 import Nav from './components/nav/nav'
-import Table from './components/table/table'
+import Header from './components/header/header'
+import Table from './components/main/table'
 
 function App() {
   return (
     <>
-      <Nav/>
-      <Table/>
+    <div className='main-container'>
+        <div>
+          <Nav/>
+        </div>
+        <div>
+          <Header/>
+          <Table/>
+        </div>
+      </div>
     </>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios"
+import './main.css'
 
 function Table() {
     const [jobs, setJobs] = useState([])
@@ -54,15 +55,17 @@ function Table() {
 }
 
 
-function JobRow({ logo, company, position, role, level, location, contract }) {
+function JobRow({ logo, company, role, level, location, contract }) {
+    const verifyValue = (value) => value ? value : "N/A";
+
     return (
         <tr>
-        <td><img src={logo} alt="N/A"/></td>
-        <td>{company}</td>
-        <td>{role}</td>
-        <td>{level}</td>
-        <td>{location}</td>
-        <td>{contract}</td>
+        <td><img src={verifyValue(logo)} alt="N/A"/></td>
+        <td>{verifyValue(company)}</td>
+        <td>{verifyValue(role)}</td>
+        <td>{verifyValue(level)}</td>
+        <td>{verifyValue(location)}</td>
+        <td>{verifyValue(contract)}</td>
         </tr>
     )
 }

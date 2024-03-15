@@ -1,0 +1,38 @@
+:root {
+  --clr-background-1: #1c1c1eae;
+  --clr-background-2: #0f0f10;
+  --clr-background-3: #1c1c1e;
+  --clr-background-4: #97979b;
+  --text-light-1: #FFFFF0;
+  --text-light-2: #FFFFFF;
+  --text-dark: #1c1c1e;
+  --radius-1: 2rem;
+  --radius-2: 0.6rem;
+  --spacing: 0.15rem;
+  --ff-primary: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--clr-background-3);
+}
+
+button {
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+}
+
+.main-container {
+  display: flex;
+  column-gap: 250px;
+}
