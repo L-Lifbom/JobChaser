@@ -1,3 +1,18 @@
+const url = 'https://jobsearch.api.jobtechdev.se/search?q=Flen';
+
+async function fetchJobs(url) {
+
+    try {
+        const response = await get(url);
+    } catch (error) {
+        console.error(error)
+    }
+
+
+
+}
+
+fetchJobs()
 
 function Table() {
     return (
@@ -47,4 +62,6 @@ function Form({ logo, company, position, role, level, location, contract }) {
           </tr>
         </tbody>
     )
-  }
+}
+
+export default Table
