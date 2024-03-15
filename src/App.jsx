@@ -3,7 +3,6 @@ import './style/App.css'
 import Nav from './components/nav/nav'
 import Table from './components/table/table'
 
-
 function App() {
   return (
     <>
