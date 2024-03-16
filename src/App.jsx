@@ -1,7 +1,6 @@
 import './style/index.css'
 import Nav from './components/nav/nav'
-import Header from './components/header/header'
-import Table from './components/main/table'
+import Main from './components/main/main'
 
 function App() {
   return (
@@ -11,8 +10,7 @@ function App() {
           <Nav/>
         </div>
         <div>
-          <Header/>
-          <Table/>
+          <Main/>
         </div>
       </div>
     </>

@@ -1,6 +1,6 @@
-import styles from './header.module.css'
+import styles from './search.module.css'
 
-function Header() {
+function Search() {
     return (
         <>
             <header>
@@ -10,4 +10,4 @@ function Header() {
     )
 }
 
-export default Header
+export default Search

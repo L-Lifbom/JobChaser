@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios"
-import styles from './main.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styles from './table.module.css'
+
 
 function Table() {
     const [jobs, setJobs] = useState([])
@@ -32,6 +34,7 @@ function Table() {
                         <th>Level</th>
                         <th>Location</th>
                         <th>Contract</th>
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -67,6 +70,7 @@ function JobRow({ logo, company, role, level, location, contract }) {
         <td>{verifyValue(level)}</td>
         <td>{verifyValue(location)}</td>
         <td>{verifyValue(contract)}</td>
+        <td><FontAwesomeIcon icon="fa-solid fa-circle-info" /></td>
         </tr>
     )
 }
