@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './table.module.css'
 
 
-function Table() {
+function Table({ filter }) {
     const [jobs, setJobs] = useState([])
 
     async function fetchJobs() {
@@ -22,6 +22,8 @@ function Table() {
     useEffect(() => {
         fetchJobs()
     }, []);
+
+    const filterData = jobs.filter(job =>)
 
     return (
         <main>
