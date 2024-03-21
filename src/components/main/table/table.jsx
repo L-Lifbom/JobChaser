@@ -23,7 +23,11 @@ function Table({ filter }) {
         fetchJobs()
     }, []);
 
-    const filterData = jobs.filter(job =>)
+    const filteredJobs = jobs.filter(job => 
+        job.employer.name.toLowerCase().includes(filter.toLowerCase()) ||
+        job.headline.toLowerCase().includes(filter.toLowerCase()) ||
+        (job.workplace_address && job.workplace_address.municipality && job.workplace_address.municipality.toLowerCase().includes(filter.toLowerCase()))
+    );
 
     return (
         <main>
@@ -41,7 +45,7 @@ function Table({ filter }) {
                 </thead>
 
                 <tbody className='data-template'>
-                    {jobs.map((job) => {
+                    {filteredJobs.map((job) => {
                         return (
                             <JobRow
                             key={job.id}
