@@ -36,3 +36,9 @@ input {
   display: flex;
   column-gap: 250px;
 }
+
+.page-links {
+  color: red;
+  position: absolute;
+  top: 10px;
+}
