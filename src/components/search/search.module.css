@@ -1,9 +1,12 @@
 
 header {
+  display: flex;
+  align-items: center;
   position: relative;
   background-color: var(--clr-background-2);
-  width: 800px;
+  width: 994px;
   height: 100px;
+  margin-top: 50px;
 }
 
 .header-input {

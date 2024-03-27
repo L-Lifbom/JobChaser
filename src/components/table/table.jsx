@@ -13,7 +13,6 @@ function Table({ filter }) {
         try {
             const response = await axios.get(url);
             setJobs(response.data.hits)
-            Table(jobs)
         } catch (error) {
             console.error(error)
         }
@@ -40,7 +39,6 @@ function Table({ filter }) {
                         <th>Level</th>
                         <th>Location</th>
                         <th>Contract</th>
-                        <th></th>
                     </tr>
                 </thead>
 
@@ -76,7 +74,6 @@ function JobRow({ logo, company, role, level, location, contract }) {
         <td>{verifyValue(level)}</td>
         <td>{verifyValue(location)}</td>
         <td>{verifyValue(contract)}</td>
-        <td><FontAwesomeIcon icon="fa-solid fa-circle-info" /></td>
         </tr>
     )
 }
