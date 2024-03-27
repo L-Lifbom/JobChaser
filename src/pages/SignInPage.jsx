@@ -1,7 +1,9 @@
+import SignInForm from '../components/SignInForm'
+
 function SignIn() {
     return (
         <>
-            <p>hello</p>
+            <SignInForm />
         </>
     )
 }
