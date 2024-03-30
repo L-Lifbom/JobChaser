@@ -25,9 +25,12 @@ function Nav() {
       <div className='nav-bar'>
         <ul>
           <li><Link to="/jobs">Jobs</Link></li>
-          <li><Link to="/signin">Sign In</Link></li>
-          <li><Link to="/signup">Sign Up</Link></li>
         </ul>
+        <div className='login-nav-container'>
+          <div className='horizontal-line'></div>
+          <Link to="/signin">Sign In</Link>
+          <Link to="/signup">Sign Up</Link>
+        </div>
       </div>
 
   )
