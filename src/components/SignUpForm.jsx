@@ -1,4 +1,10 @@
+import React, { useState } from 'react'; 
+
 function SignUpForm() {
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
     return (
         <>
             <form action="">
