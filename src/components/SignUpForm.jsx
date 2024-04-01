@@ -5,16 +5,34 @@ function SignUpForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log({ username, email, password });
+    };
+
     return (
-        <>
-            <form action="">
-                <input type="text" placeholder="Username"/>
-                <input type="text" placeholder="Email"/>
-                <input type="text" placeholder="Password" />
-                <button className="signin-btn">Create Account</button>
-            </form>
-        </>
-    )
+        <form onSubmit={handleSubmit}>
+            <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+            />
+            <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type="submit" className="signin-btn">Create Account</button>
+        </form>
+    );
 }
 
-export default SignUpForm
+export default SignUpForm;
