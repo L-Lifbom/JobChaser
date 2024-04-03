@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
+import { useAuth } from './AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 function SignInForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { signIn } = useAuth();
+    const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log({ email, password });
+        try {
+            await signIn(email, password);
+            navigate('/jobs');
+            console.log("Signed in successfully");
+        } catch (error) {
+            alert(error.message);
+        }
     };
 
     return (
         <form onSubmit={handleSubmit}>
-            <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            <button type="submit" className="signin-btn">Sign In</button>
+            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <button type="submit" className="sign-btn">Sign In</button>
         </form>
     );
 }

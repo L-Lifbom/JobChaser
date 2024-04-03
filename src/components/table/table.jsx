@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 import styles from './table.module.css'
 
 
@@ -36,9 +37,9 @@ function Table({ filter }) {
                         <th>Logo</th>
                         <th>Company</th>
                         <th>Role</th>
-                        <th>Level</th>
                         <th>Location</th>
                         <th>Contract</th>
+                        <th>Link</th>
                     </tr>
                 </thead>
 
@@ -50,9 +51,9 @@ function Table({ filter }) {
                             logo={job.logo_url}
                             company={job.employer.name}
                             role={job.headline}
-                            level={job.level}
                             location={job.workplace_address.municipality}
                             contract={job.salary_description}
+                            link={job.webpage_url}
                             />
                         )
                         })}
@@ -63,17 +64,24 @@ function Table({ filter }) {
 }
 
 
-function JobRow({ logo, company, role, level, location, contract }) {
+function JobRow({ logo, company, role, location, contract, link }) {
     const verifyValue = (value) => value ? value : "-";
 
+    const contactUrl = (url => {
+        if (url) {
+            return <a href={url} target="_blank"><FontAwesomeIcon icon={faLink} style={{ color: 'white', fontSize: '1.7rem' }} /></a>;
+        } else {
+            return "-"
+        }
+    })
     return (
         <tr>
         <td><img src={logo} alt="N/A"/></td>
         <td>{verifyValue(company)}</td>
         <td>{verifyValue(role)}</td>
-        <td>{verifyValue(level)}</td>
         <td>{verifyValue(location)}</td>
         <td>{verifyValue(contract)}</td>
+        <td>{contactUrl(link)}</td>
         </tr>
     )
 }

@@ -1,8 +1,10 @@
 :root {
+  /* --clr-background-1: #1c1c1eae;
+  --clr-background-2: #0f0f10;
+  --clr-background-3: #1c1c1e; */
   --clr-background-1: #1c1c1eae;
   --clr-background-2: #0f0f10;
   --clr-background-3: #1c1c1e;
-  --clr-background-4: #97979b;
   --text-light-1: #FFFFF0;
   --text-light-2: #FFFFFF;
   --text-dark: #1c1c1e;
@@ -26,10 +28,20 @@ body {
 
 button {
   font-family: inherit;
+  outline: none;
+  border: none;
+  background-color: var(--text-light-1);
+  border-radius: var(--radius-2);
+  color: var(--text-dark);
+  cursor: pointer;
+  height: 30px;
+  width: 75px;
+  font-size: 1.1rem;
 }
 
 input {
   font-family: inherit;
+  border: none;
 }
 
 .main-container {
@@ -86,17 +98,17 @@ input {
   padding: 10px 0 0 65px;
 }
 
+.nav-bar p {
+  color: white;
+  padding: 0 0 10px 0;
+}
+
+.nav-bar span {
+  font-weight: bold;
+}
+
 .nav-btn-1, .nav-btn-2 {
   position: absolute;
-  height: 40px;
-  width: 75px;
-  outline: none;
-  border: none;
-  background-color: var(--text-light-1);
-  border-radius: var(--radius-2);
-  color: var(--text-dark);
-  font-size: 1.5rem;
-  cursor: pointer;
 }
 
 .nav-btn-1 {
@@ -145,6 +157,18 @@ input {
   justify-content: center;
   width: 1000px;
   align-items: center;
+  flex-direction: column;
+  text-transform: capitalize;
+  color: var(--text-light-1);
+}
+
+.sign-contanier h1 {
+  padding: 0 0 20px 0;
+}
+
+.sign-btn {
+  width: 150px;
+  margin: 10px 0 0 0;
 }
 
 form {
@@ -152,3 +176,8 @@ form {
   flex-direction: column;
   align-items: center;
 }
+
+form input {
+  margin: 20px 0 0 0;
+}
+

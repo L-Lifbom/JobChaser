@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
 import SignInPage from './pages/SignInPage';
 import JobsPage from './pages/JobsPage';
 import SignUpPage from './pages/SignUpPage';
+import { useAuth } from './components/AuthContext';
 import './style/index.css';
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
 }
 
 function Nav() {
+  const { user, signOut } = useAuth();
+
   return (
       <div className='nav-bar'>
         <ul>
@@ -28,12 +31,20 @@ function Nav() {
         </ul>
         <div className='login-nav-container'>
           <div className='horizontal-line'></div>
-          <Link to="/signin">Sign In</Link>
-          <Link to="/signup">Sign Up</Link>
+          {user ? (
+              <>
+                <p>Logged in as <span>{user.email}</span></p>
+                <button onClick={() => signOut()}>Sign Out</button>
+              </>
+            ) : (
+              <>
+                <Link to="/signin">Sign In</Link>
+                <Link to="/signup">Sign Up</Link>
+              </>
+          )}
         </div>
       </div>
-
-  )
+  );
 }
 
 export default App;
