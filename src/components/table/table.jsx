@@ -9,7 +9,7 @@ function Table({ filter }) {
     const [jobs, setJobs] = useState([])
 
     async function fetchJobs() {
-        const url = 'https://jobsearch.api.jobtechdev.se/search?q=utvecklare';
+        const url = 'https://jobsearch.api.jobtechdev.se/search?q=utvecklare&offset=0&limit=100';
     
         try {
             const response = await axios.get(url);

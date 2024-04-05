@@ -8,11 +8,11 @@ import './style/index.css';
 function App() {
   return (
     <BrowserRouter>
-      <div className='main-container'>
+      <div className='body-container'>
         <Nav />
         <Routes>
-          <Route path="/signin" element={<SignInPage />} />
           <Route path="/jobs" element={<JobsPage />} />
+          <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/" element={<Navigate replace to="/jobs" />} />
         </Routes>

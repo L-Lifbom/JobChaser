@@ -7,7 +7,7 @@ function Main() {
 
     return (
         <>
-            <div>
+            <div className='main-container'>
                 <Search filter={filter} setFilter={setFilter} />
                 <Table filter={filter} />
             </div>

@@ -44,9 +44,16 @@ input {
   border: none;
 }
 
+.body-container {
+  display: flex;
+}
+
 .main-container {
   display: flex;
-  column-gap: 250px;
+  flex-direction: column;
+  align-items: center;
+  width: 85vw;
+  overflow-y: scroll;
 }
 
 .page-links {
@@ -58,7 +65,7 @@ input {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 15vw;
   height: 100vh;
   background-color: var(--clr-background-2);
   align-items: center;
@@ -105,18 +112,6 @@ input {
 
 .nav-bar span {
   font-weight: bold;
-}
-
-.nav-btn-1, .nav-btn-2 {
-  position: absolute;
-}
-
-.nav-btn-1 {
-  right: 145px;
-}
-
-.nav-btn-2 {
-  right: 50px;
 }
 
 .login-nav-container {
