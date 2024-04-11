@@ -5,7 +5,34 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import styles from './table.module.css'
 
 
-function Table({ filter }) {
+interface TableProps {
+  filter: string;
+}
+
+interface Job {
+  id: string;
+  logo_url: string;
+  employer: {
+    name: string;
+  };
+  headline: string;
+  workplace_address: {
+    municipality: string;
+  };
+  salary_description: string;
+  webpage_url: string;
+}
+
+interface JobRowProps {
+  logo: string;
+  company: string;
+  role: string;
+  location: string;
+  contract: string;
+  link: string;
+}
+
+const Table: React.FC<TableProps> = ({ filter }) => {
     const [jobs, setJobs] = useState([])
 
     async function fetchJobs() {
@@ -63,17 +90,26 @@ function Table({ filter }) {
     )
 }
 
+interface JobRowProps {
+    logo: string;
+    company: string;
+    role: string;
+    location: string;
+    contract: string;
+    link: string;
+}
 
-function JobRow({ logo, company, role, location, contract, link }) {
-    const verifyValue = (value) => value ? value : "-";
+const JobRow: React.FC<JobRowProps> = ({ logo, company, role, location, contract, link }) => {
+    const verifyValue = (value: string) => value ? value : "-";
 
-    const contactUrl = (url => {
+    const contactUrl = (url: string) => {
         if (url) {
             return <a href={url} target="_blank"><FontAwesomeIcon icon={faLink} style={{ color: 'white', fontSize: '1.7rem' }} /></a>;
         } else {
             return "-"
         }
-    })
+    }
+
     return (
         <tr>
         <td><img src={logo} alt="N/A"/></td>

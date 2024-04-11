@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Search from '../components/search/search'
 import Table from '../components/table/table'
+import FilterOperations from '../components/FIlterOperations'
 
 function Main() {
     const [filter, setFilter] = useState('');
@@ -9,6 +10,7 @@ function Main() {
         <>
             <div className='main-container'>
                 <Search filter={filter} setFilter={setFilter} />
+                <FilterOperations />
                 <Table filter={filter} />
             </div>
         </>
