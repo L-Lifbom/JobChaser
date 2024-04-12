@@ -1,6 +1,9 @@
-import styles from './search.module.css'
+interface SearchProps {
+  filter: string;
+  setFilter: (value: string) => void;
+}
 
-function Search({ filter, setFilter }) {
+function Search({ filter, setFilter }: SearchProps) {
     return (
         <>
             <header>
@@ -17,4 +20,4 @@ function Search({ filter, setFilter }) {
     )
 }
 
-export default Search
+export default Search   
