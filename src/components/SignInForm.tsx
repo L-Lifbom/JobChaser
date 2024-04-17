@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
 
-function SignInForm() {
+function SignInForm(): JSX.Element {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { signIn } = useAuth();
@@ -14,7 +14,7 @@ function SignInForm() {
             await signIn(email, password);
             navigate('/jobs');
             console.log("Signed in successfully");
-        } catch (error) {
+        } catch (error: any) {
             alert(error.message);
         }
     };

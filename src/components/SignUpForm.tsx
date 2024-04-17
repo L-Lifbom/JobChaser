@@ -14,7 +14,7 @@ function SignUpForm() {
             await signUp(email, password);
             navigate('/jobs');
             console.log("Signed up successfully");
-        } catch (error) {
+        } catch (error: any) {
             alert(error.message);
         }
     };

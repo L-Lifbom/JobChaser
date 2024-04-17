@@ -10,7 +10,21 @@ function FilterOperations() {
     const dispatch = useDispatch()
     return (
         <div>
-            <button>sasdas</button>
+            <div>
+                <input
+                    type="checkbox"
+                    id="Heltid"
+                    name="Heltid" />
+                <label for="Heltid">Heltid</label>
+                <input
+                    type="checkbox"
+                    id="Deltid"
+                    name="Heltid" />
+                <label for="Deltid">Deltid</label>
+            </div>
+            <div>
+                
+            </div>
         </div>
     )
 }

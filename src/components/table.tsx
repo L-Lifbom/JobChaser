@@ -52,8 +52,9 @@ const Table: React.FC<TableProps> = ({ filter }) => {
     const filteredJobs = jobs.filter(job => 
         job.employer.name.toLowerCase().includes(filter.toLowerCase()) ||
         job.headline.toLowerCase().includes(filter.toLowerCase()) ||
+        job.working_hours_type?.label?.toLowerCase().includes(filter.toLowerCase()) ||
         (job.workplace_address && job.workplace_address.municipality && job.workplace_address.municipality.toLowerCase().includes(filter.toLowerCase()))
-    );
+    );    
 
     return (
         <main>
@@ -65,6 +66,7 @@ const Table: React.FC<TableProps> = ({ filter }) => {
                         <th>Role</th>
                         <th>Location</th>
                         <th>Contract</th>
+                        <th>Work Hours</th>
                         <th>Link</th>
                     </tr>
                 </thead>
@@ -79,6 +81,7 @@ const Table: React.FC<TableProps> = ({ filter }) => {
                             role={job.headline}
                             location={job.workplace_address.municipality}
                             contract={job.salary_description}
+                            workhours={job.working_hours_type.label}
                             link={job.webpage_url}
                             />
                         )
@@ -95,10 +98,11 @@ interface JobRowProps {
     role: string;
     location: string;
     contract: string;
+    workhours: string;
     link: string;
 }
 
-const JobRow: React.FC<JobRowProps> = ({ logo, company, role, location, contract, link }) => {
+const JobRow: React.FC<JobRowProps> = ({ logo, company, role, location, contract, workhours, link }) => {
     const verifyValue = (value: string) => value ? value : "-";
 
     const contactUrl = (url: string) => {
@@ -116,6 +120,7 @@ const JobRow: React.FC<JobRowProps> = ({ logo, company, role, location, contract
         <td>{verifyValue(role)}</td>
         <td>{verifyValue(location)}</td>
         <td>{verifyValue(contract)}</td>
+        <td>{verifyValue(workhours)}</td>
         <td>{contactUrl(link)}</td>
         </tr>
     )
