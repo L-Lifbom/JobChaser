@@ -4,7 +4,7 @@ import SignInPage from './pages/SignInPage';
 import JobsPage from './pages/JobsPage';
 import SignUpPage from './pages/SignUpPage';
 import { useAuth } from './components/AuthContext';
-import './style/index.css';
+import '../style/index.css';
 function App() {
     return (_jsx(BrowserRouter, { children: _jsxs("div", { className: 'body-container', children: [_jsx(Nav, {}), _jsxs(Routes, { children: [_jsx(Route, { path: "/jobs", element: _jsx(JobsPage, {}) }), _jsx(Route, { path: "/signin", element: _jsx(SignInPage, {}) }), _jsx(Route, { path: "/signup", element: _jsx(SignUpPage, {}) }), _jsx(Route, { path: "/", element: _jsx(Navigate, { replace: true, to: "/jobs" }) })] })] }) }));
 }

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios"
+import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
-
+import type { RootState } from '../store/store';
 
 interface TableProps {
   filter: string;
@@ -20,19 +21,15 @@ interface Job {
   };
   salary_description: string;
   webpage_url: string;
+  working_hours_type: {
+    label: string;
+  };
 }
 
-interface JobRowProps {
-  logo: string;
-  company: string;
-  role: string;
-  location: string;
-  contract: string;
-  link: string;
-}
 
-const Table: React.FC<TableProps> = ({ filter }) => {
-    const [jobs, setJobs] = useState([])
+function Table({ filter }: TableProps): JSX.Element {
+    const [jobs, setJobs] = useState<Job[]>([])
+    const { heltid, deltid } = useSelector((state: RootState) => state.filter);
 
     async function fetchJobs() {
         const url = 'https://jobsearch.api.jobtechdev.se/search?q=utvecklare&offset=0&limit=100';
@@ -49,12 +46,16 @@ const Table: React.FC<TableProps> = ({ filter }) => {
         fetchJobs()
     }, []);
 
-    const filteredJobs = jobs.filter(job => 
-        job.employer.name.toLowerCase().includes(filter.toLowerCase()) ||
-        job.headline.toLowerCase().includes(filter.toLowerCase()) ||
-        job.working_hours_type?.label?.toLowerCase().includes(filter.toLowerCase()) ||
-        (job.workplace_address && job.workplace_address.municipality && job.workplace_address.municipality.toLowerCase().includes(filter.toLowerCase()))
-    );    
+    const filteredJobs = jobs.filter(job => {
+        const searchMatch = job.employer.name.toLowerCase().includes(filter.toLowerCase()) || job.headline.toLowerCase().includes(filter.toLowerCase()) || job.workplace_address?.municipality?.toLowerCase().includes(filter.toLowerCase());
+
+        const hoursType = job.working_hours_type?.label?.toLowerCase();
+        const hoursMatch = (!heltid && !deltid) || (heltid && deltid) || (heltid && hoursType === 'heltid') || (deltid && hoursType === 'deltid');
+
+        return searchMatch && hoursMatch;
+    });
+
+
 
     return (
         <main>
@@ -102,7 +103,7 @@ interface JobRowProps {
     link: string;
 }
 
-const JobRow: React.FC<JobRowProps> = ({ logo, company, role, location, contract, workhours, link }) => {
+function JobRow({ logo, company, role, location, contract, workhours, link }: JobRowProps): JSX.Element {
     const verifyValue = (value: string) => value ? value : "-";
 
     const contactUrl = (url: string) => {

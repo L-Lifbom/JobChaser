@@ -1,13 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
-    isActive: false,
-    city: "Stockholm"
+    heltid: false,
+    deltid: false,
 };
 export const filterSlice = createSlice({
     name: 'filter',
     initialState,
-    reducers: {},
+    reducers: {
+        toggleHeltid(state) {
+            state.heltid = !state.heltid;
+        },
+        toggleDeltid(state) {
+            state.deltid = !state.deltid;
+        },
+    },
 });
-// Action creators are generated for each case reducer function
-export const {} = filterSlice.actions;
+export const { toggleHeltid, toggleDeltid } = filterSlice.actions;
 export default filterSlice.reducer;

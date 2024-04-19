@@ -14,9 +14,13 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const AuthContext = createContext();
+const AuthContext = createContext(undefined);
 export function useAuth() {
-    return useContext(AuthContext);
+    const context = useContext(AuthContext);
+    if (context === undefined) {
+        throw new Error('useAuth must be used within an AuthProvider');
+    }
+    return context;
 }
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);

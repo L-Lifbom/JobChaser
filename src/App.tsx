@@ -3,7 +3,7 @@ import SignInPage from './pages/SignInPage';
 import JobsPage from './pages/JobsPage';
 import SignUpPage from './pages/SignUpPage';
 import { useAuth } from './components/AuthContext';
-import './style/index.css';
+import '../style/index.css';
 
 function App() {
   return (

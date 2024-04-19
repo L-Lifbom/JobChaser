@@ -1,28 +1,29 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface filterState {
-    isActive: boolean
-    city: string
+interface FilterState {
+  heltid: boolean;
+  deltid: boolean;
 }
 
-const initialState: filterState = {
-    isActive: false,
-    city: "Stockholm"
-}
+const initialState: FilterState = {
+  heltid: false,
+  deltid: false,
+};
 
 export const filterSlice = createSlice({
-    name: 'filter',
-    initialState,
-    reducers: {
-
-
-        
+  name: 'filter',
+  initialState,
+  reducers: {
+    toggleHeltid(state) {
+      state.heltid = !state.heltid;
     },
-  })
+    toggleDeltid(state) {
+      state.deltid = !state.deltid;
+    },
 
+  },
+});
 
-// Action creators are generated for each case reducer function
-export const {} = filterSlice.actions
+export const { toggleHeltid, toggleDeltid } = filterSlice.actions;
 
-export default filterSlice.reducer
+export default filterSlice.reducer;
