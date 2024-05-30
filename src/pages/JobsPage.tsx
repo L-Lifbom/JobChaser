@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Search from '../components/search'
 import Table from '../components/table'
-import FilterOperations from '../components/FilterOperations'
+import FilterOperations from '../components/FilterOperations';
 
 function Main() {
     const [filter, setFilter] = useState('');
